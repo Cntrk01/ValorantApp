@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.movieapp.valorantapp.ui.Home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_buddies"
+            app:destination="@id/nav_buddies" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_agents"
+            app:destination="@id/nav_agents" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_bundle"
+            app:destination="@id/nav_bundle" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_agents"
+        android:name="com.movieapp.valorantapp.ui.Agents.AgentsF"
+        android:label="Agents"
+        tools:layout="@layout/fragment_agents" >
+        <action
+            android:id="@+id/action_nav_agents_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_agents_to_agentsDetail"
+            app:destination="@id/agentsDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_buddies"
+        android:name="com.movieapp.valorantapp.ui.Buddies.BuddiesF"
+        android:label="Buddies"
+        tools:layout="@layout/fragment_buddies" >
+        <action
+            android:id="@+id/action_nav_buddies_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_bundle"
+        android:name="com.movieapp.valorantapp.ui.Bundle.BundleF"
+        android:label="Bundle"
+        tools:layout="@layout/fragment_bundle" >
+        <action
+            android:id="@+id/action_nav_bundle_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/agentsDetail"
+        android:name="com.movieapp.valorantapp.ui.Agents.AgentsDetail"
+        android:label="fragment_agents_detail"
+        tools:layout="@layout/fragment_agents_detail" >
+        <action
+            android:id="@+id/action_agentsDetail_to_nav_agents"
+            app:destination="@id/nav_agents" />
+        <argument
+            android:name="agents"
+            app:argType="com.movieapp.valorantapp.agents_buddies_dataclass.Agents" />
+    </fragment>
+</navigation>

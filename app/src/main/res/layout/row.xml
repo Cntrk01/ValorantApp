@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="agent"
+            type="com.movieapp.valorantapp.agents_buddies_dataclass.Agents" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#D3CECE"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/agentImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:scaleType="centerCrop"
+                    android:downLoadUrl="@{agent.displayIcon}"
+                    android:layout_weight="1"
+                    />
+
+                <ImageView
+                    android:id="@+id/agentImage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:downLoadUrl="@{agent.fullPortrait}"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    />
+            </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="15dp">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Display Name"
+                  android:textSize="15sp"
+                  android:textStyle="bold"
+                  android:layout_marginTop="8dp" />
+              <TextView
+                  android:id="@+id/agentsDispName"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:text="@{agent.displayName}"
+                  android:textSize="18sp"
+
+                  />
+
+
+          </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+</layout>
